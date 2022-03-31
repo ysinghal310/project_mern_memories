@@ -5,6 +5,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import postRoutes from "./routes/posts.js";
+import userRoutes from "./routes/users.js";
 
 const app = express();
 dotenv.config();
@@ -28,4 +29,5 @@ mongoose
   .catch((error) => console.log(`${error} did not connect`));
 
 app.use("/posts", postRoutes);
+app.use("/user", userRoutes);
 // mongoose.set("useFindAndModify", false)
