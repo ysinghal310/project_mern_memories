@@ -28,6 +28,11 @@ mongoose
   )
   .catch((error) => console.log(`${error} did not connect`));
 
+app.get("/", (req, res) => {
+  res.send("server is running");
+});
+
 app.use("/posts", postRoutes);
+
 app.use("/user", userRoutes);
 // mongoose.set("useFindAndModify", false)
